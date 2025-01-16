@@ -12,10 +12,11 @@ import astro from '../assets/profile-picture.png'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
-const languages = ['Python', 'Java', 'C', 'C++', 'C#']
-const webTech = ['HTMX', 'Tailwind', 'Bootstrap', 'Flask', 'Django']
-const devTools = ['Git', 'Github', 'Docker', 'MySQL']
-const mlTech = ['Transformers', 'Scikit-learn', 'Pytorch', 'Pandas', 'NumPy']
+const languages = ['Python', 'Java', 'C', 'C++', 'C#'];
+const webTech = ['HTMX', 'Tailwind CSS', 'Bootstrap', 'Flask', 'Django'];
+const mlTech = ['Transformers', 'Scikit-learn', 'PyTorch', 'TensorFlow', 'Pandas', 'NumPy'];
+const devTools = ['Docker', 'Git', 'MySQL', 'Gradio', 'Qdrant', 'Streamlit'];
+
 
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
@@ -106,7 +107,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
 					
-					<li><strong>Related Course: </strong> Data Structures, Algorithms, Machine Learning, Data Science, Web Development, and Software Development</li>
+					<li><strong>Coursework: </strong> Data Structures, Algorithms, Software Development, Web Development, Machine Learning, and Data Science</li>
 				</ul>
 			</Card>
 			<Card
@@ -131,32 +132,40 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title="Projects">
 			<div class="flex flex-wrap justify-between gap-3">
-			  <ProjectCard
-				href="https://barkley.streamlit.app/"
-				heading="Barkley"
-				subheading="Tree Bark Classification"
-				imagePath="/src/assets/project-barkley.png"
-				altText="barkley"
-				class="w-full sm:w-[48%] lg:w-[30%]"
-			  />
-			  <ProjectCard
-				as="a"
-				href="https://github.com/Alyzbane/Semanticlip"
-				heading="Semanticlip"
-				subheading="Semantic image search"
-				imagePath="/src/assets/project-semanticlip.png"
-				altText="Library Inventory"
-				class="w-full sm:w-[48%] lg:w-[30%]"
-			  />
-			  <ProjectCard
-				as="a"
-				href="https://github.com/Alyzbane/Alamat-Inventory"
-				heading="Alamat"
-				subheading="Library Inventory System"
-				imagePath="/src/assets/project-alamat.png"
-				altText="Library Inventory"
-				class="w-full sm:w-[48%] lg:w-[30%]"
-			  />
+				<ProjectCard
+					href="https://barkley.streamlit.app/"
+					heading="Barkley"
+					subheading="Tree Bark Image Classification"
+					imagePath="/src/assets/project-barkley.png"
+					altText="barkley"
+					class="w-full sm:w-[48%] lg:w-[30%]"
+				/>
+				<ProjectCard
+					href="https://trees.firstasia.edu.ph/"
+					heading="Snapfolia"
+					subheading="Leaf Image Classification"
+					imagePath="/src/assets/project-snapfolia.png"
+					altText="barkley"
+					class="w-full sm:w-[48%] lg:w-[30%]"
+				/>
+				<ProjectCard
+					as="a"
+					href="https://github.com/Alyzbane/Semanticlip"
+					heading="Semanticlip"
+					subheading="Semantic Image Search"
+					imagePath="/src/assets/project-semanticlip.png"
+					altText="Library Inventory"
+					class="w-full sm:w-[48%] lg:w-[30%]"
+				/>
+				<ProjectCard
+					as="a"
+					href="https://github.com/Alyzbane/Alamat-Inventory"
+					heading="Alamat"
+					subheading="Library Inventory System"
+					imagePath="/src/assets/project-alamat.png"
+					altText="Library Inventory"
+					class="w-full sm:w-[48%] lg:w-[30%]"
+				/>
 			</div>
 		</Section>
 		  
