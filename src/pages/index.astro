@@ -5,23 +5,19 @@ import Card from '../components/Card.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
-import PostPreview from '@/components/blog/PostPreview.astro'
 
 import { Image } from 'astro:assets'
 import astro from '../assets/profile-picture.png'
 
-import { getAllPosts, sortMDByDate } from '@/utils'
-
 const languages = ['Python', 'Java', 'C', 'C++', 'C#'];
-const webTech = ['HTMX', 'Tailwind CSS', 'Bootstrap', 'Flask', 'Django'];
+const webTech = [ 'Tailwind CSS', 'Bootstrap', 'Flask', 'Django', 'HTMX', 'Gradio', 'Streamlit'];
 const mlTech = ['Transformers', 'Scikit-learn', 'PyTorch', 'TensorFlow', 'Pandas', 'NumPy'];
-const devTools = ['Docker', 'Git', 'MySQL', 'Gradio', 'Qdrant', 'Streamlit'];
+const devTools = ['Docker', 'Git', 'MySQL', 'PowerBI', 'Qdrant', 'Redis'];
 
 const barkley = ['Python', 'PyTorch', 'Transformers', 'Streamlit', 'Redis'];
-
-const MAX_POSTS = 10
-const allPosts = await getAllPosts()
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+const snapfolia = ['Python', 'PyTorch', 'Transformers'];
+const semanticlip = ['Python', 'Gradio', 'Transformers', 'Qdrant'];
+const alamat = ['C++', 'Console', 'File I/O', 'Data Structures', 'OOP'];
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
@@ -31,7 +27,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				src={astro}
 				alt='profile photo'
 				class='h-40 w-auto rounded-full p-2'
-				loading='eager'
+				loading='lazy'
 			/>
 
 			<div class='flex flex-col items-center gap-y-4'>
@@ -98,21 +94,25 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='Work Experience'>
 			<Card
+				as='a'
 				heading='Valenin IT Services'
 				subheading='DeveOps Intern'
 				date='March 2025 - April 2025'
 				imagePath='/src/assets/logo-valenin.png'
 				altText='faith logo'
 				imageClass='h-12 w-auto md:-left-16'
+				href='/blog/valenin-devops-intern/'
 			>
 			</Card>
 			<Card
-				heading='FAITH Colleges'
+				as='a'
+				heading='FAITH College of Computing and Information Technology'
 				subheading='Machine Learning Research Analyst Intern'
 				date='June 2024 - July 2024'
 				imagePath='/src/assets/logo-faith.png'
 				altText='faith logo'
 				imageClass='h-12 w-auto md:-left-16'
+				href='/blog/ccit-ml-intern/'
 			>
 			</Card>
 		</Section>
@@ -140,8 +140,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<SkillLayout title='Others' skills={devTools} />
 		</Section>
 
-		<Section title="Projects">
-			<div class="flex flex-wrap justify-normal gap-3">
+		<div>
+			<h2 class="mb-6 text-xl font-semibold">Projects</h2>
+			<div class="flex flex-wrap justify-start gap-2">
 				<ProjectCard
 					href="https://barkley.streamlit.app/"
 					heading="Tree Bark Image Classification"
@@ -149,36 +150,39 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					imagePath="/src/assets/project-barkley.png"
 					altText="barkley"
 					skills={barkley}
-					class="w-full sm:w-[48%] lg:w-[30%]"
+					class="w-full sm:w-[48%]"
 				/>
 				<ProjectCard
 					href="https://trees.firstasia.edu.ph/"
 					heading="Leaf Image Classification"
 					subheading=""
 					imagePath="/src/assets/project-snapfolia.png"
-					altText="barkley"
-					class="w-full sm:w-[48%] lg:w-[30%]"
+					altText="snapfolia"
+					skills={snapfolia}
+					class="w-full sm:w-[48%]"
 				/>
 				<ProjectCard
 					as="a"
 					href="https://github.com/Alyzbane/Semanticlip"
-					heading="Semanticlip"
-					subheading="Semantic Image Search"
+					heading="Semantic Image Search"
+					subheading=""
 					imagePath="/src/assets/project-semanticlip.png"
-					altText="Library Inventory"
-					class="w-full sm:w-[48%] lg:w-[30%]"
+					altText="semanticlip"
+					skills={semanticlip}
+					class="w-full sm:w-[48%]"
 				/>
 				<ProjectCard
 					as="a"
 					href="https://github.com/Alyzbane/Alamat-Inventory"
-					heading="Alamat"
-					subheading="Library Inventory System"
+					heading="Library Inventory System"
+					subheading=""
 					imagePath="/src/assets/project-alamat.png"
 					altText="Library Inventory"
-					class="w-full sm:w-[48%] lg:w-[30%]"
+					skills={alamat}
+					class="w-full sm:w-[48%]"
 				/>
 			</div>
-		</Section>
+		</div>
 		  
 		<Section title='Certifications'>
 			<Card
