@@ -17,6 +17,7 @@ const webTech = ['HTMX', 'Tailwind CSS', 'Bootstrap', 'Flask', 'Django'];
 const mlTech = ['Transformers', 'Scikit-learn', 'PyTorch', 'TensorFlow', 'Pandas', 'NumPy'];
 const devTools = ['Docker', 'Git', 'MySQL', 'Gradio', 'Qdrant', 'Streamlit'];
 
+const barkley = ['Python', 'PyTorch', 'Transformers', 'Streamlit', 'Redis'];
 
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
@@ -36,7 +37,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<div class='flex flex-col items-center gap-y-4'>
 				<h1 class='text-center text-3xl font-bold'>Prince Daniel D. Mampusti</h1>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='+(63) 920-5406-696'>
+					<Label 
+						title='+63-920-5406-696'
+						as = 'a'
+						href='tel:639205406696'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' class='h-5 w-5' slot='icon'>
 							<path
 								fill='currentColor'
@@ -88,19 +92,36 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='About'>
 			<p class='text-muted-foreground'>
-			   👋 I'm Prince Daniel, a dedicated Computer Science 4th-year student with a drive for creating impactful solutions through code. 
-				I'm actively seeking internship opportunities to contribute my skills in software development while gaining real-world experience.
-			</br>
-			</br>
 				My focus lies in building practical applications while continuously expanding my knowledge of modern technologies.
 			</p>
+		</Section>
+
+		<Section title='Work Experience'>
+			<Card
+				heading='Valenin IT Services'
+				subheading='DeveOps Intern'
+				date='March 2025 - April 2025'
+				imagePath='/src/assets/logo-valenin.png'
+				altText='faith logo'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+			</Card>
+			<Card
+				heading='FAITH Colleges'
+				subheading='Machine Learning Research Analyst Intern'
+				date='June 2024 - July 2024'
+				imagePath='/src/assets/logo-faith.png'
+				altText='faith logo'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+			</Card>
 		</Section>
 
 		<Section title='Education'>
 			<Card
 				heading='First Asia Institute of Technology and Humanities'
 				subheading='B.S. of Computer Science'
-				date='2021 - Present'
+				date='2021 - 2025'
 				imagePath='/src/assets/logo-faith.png'
 				altText='faith logo'
 				imageClass='h-12 w-auto md:-left-16'
@@ -109,17 +130,6 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					
 					<li><strong>Coursework: </strong> Data Structures, Algorithms, Software Development, Web Development, Machine Learning, and Data Science</li>
 				</ul>
-			</Card>
-			<Card
-				heading='Malvar Senior High School'
-				subheading='TVL - Information and Communication technology'
-				date='2019 - 2021'
-				imagePath='/src/assets/logo-malvar.png'
-				altText='malvarshs logo'
-				imageClass='h-12 w-auto md:-left-16'
-			>
-			<!-- <ul class='ml-4 list-disc text-muted-foreground'>
-				<li><strong></li></ul> -->
 			</Card>
 		</Section>
 
@@ -131,19 +141,20 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		</Section>
 
 		<Section title="Projects">
-			<div class="flex flex-wrap justify-between gap-3">
+			<div class="flex flex-wrap justify-normal gap-3">
 				<ProjectCard
 					href="https://barkley.streamlit.app/"
-					heading="Barkley"
-					subheading="Tree Bark Image Classification"
+					heading="Tree Bark Image Classification"
+					subheading=""
 					imagePath="/src/assets/project-barkley.png"
 					altText="barkley"
+					skills={barkley}
 					class="w-full sm:w-[48%] lg:w-[30%]"
 				/>
 				<ProjectCard
 					href="https://trees.firstasia.edu.ph/"
-					heading="Snapfolia"
-					subheading="Leaf Image Classification"
+					heading="Leaf Image Classification"
+					subheading=""
 					imagePath="/src/assets/project-snapfolia.png"
 					altText="barkley"
 					class="w-full sm:w-[48%] lg:w-[30%]"
@@ -172,6 +183,16 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		<Section title='Certifications'>
 			<Card
 				as='a'
+				heading='GitHub Foundations'
+				subheading='GitHub Foundations Certification Program'
+				date='June 2025'
+				imagePath='/src/assets/logo-ghf.png'
+				altText='Github Foundations certificate'
+				imageClass='h-11 w-auto md:-left-16'
+				href='https://www.credly.com/badges/8a0f1206-4867-4767-9340-2fd2bfffc260/public_url'
+			/>
+			<Card
+				as='a'
 				heading='CompTIA ITF+'
 				subheading='CompTIA Information Technology Fundamentals'
 				date='May 2024'
@@ -181,6 +202,5 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				href='https://www.credly.com/badges/5129198c-2fb8-40ad-ab95-27908a381327/public_url'
 			/>
 		</Section>
-
 	</div>
 </PageLayout>
