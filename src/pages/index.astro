@@ -9,16 +9,19 @@ import SkillLayout from '../components/SkillLayout.astro'
 import { Image } from 'astro:assets'
 import astro from '../assets/profile-picture.png'
 
-const languages = ['Python', 'Java', 'C', 'C++', 'C#'];
-const webTech = [ 'Tailwind CSS', 'Bootstrap', 'Flask', 'Django', 'HTMX', 'Gradio', 'Streamlit'];
+const web3 = ['Solana RPC', 'Helius']
+const languages = ['Python', 'Java', 'C', 'C++', 'C#', 'JavaScript', 'TypeScript'];
+const webTech = ['Hono', 'grammY', 'Tailwind CSS', 'Bootstrap', 'Flask', 'FastAPI', 'Next.js', 'Django', 'Gradio', 'Streamlit'];
 const mlTech = ['Transformers', 'Scikit-learn', 'PyTorch', 'TensorFlow', 'Pandas', 'NumPy'];
-const devTools = ['Docker', 'Git', 'MySQL', 'PowerBI', 'Qdrant', 'Redis'];
+const devTools = ['Docker', 'Git', 'MySQL', 'PowerBI', 'Qdrant', 'Redis', 'VS Code', 'GitHub Copilot', 'Cloudflare KV', 'Cloudflare Workers', 'Vercel', 'n8n'];
 
 const crypto_web3 = ['grammY', 'Hono', 'Cloudflare Workers', 'Helius API', 'Cloudflare KV'];
 const barkley = ['Python', 'PyTorch', 'Transformers', 'Streamlit', 'Redis'];
 const snapfolia = ['Python', 'PyTorch', 'Transformers'];
 const semanticlip = ['Python', 'Gradio', 'Transformers', 'Qdrant'];
+const citizenRegistry = ['Java', 'Eclipse IDE', 'MySQL', 'Javax'];
 const alamat = ['C++', 'Console', 'File I/O', 'Data Structures', 'OOP'];
+
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
@@ -32,10 +35,10 @@ const alamat = ['C++', 'Console', 'File I/O', 'Data Structures', 'OOP'];
 			/>
 
 			<div class='flex flex-col items-center gap-y-4'>
-				<h1 class='text-center text-3xl font-bold'>Prince Daniel D. Mampusti</h1>
+				<h1 class='text-center text-3xl font-bold'>Prince Daniel Mampusti</h1>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
 					<Label 
-						title='+63-920-5406-696'
+						title='+63 920-5406-696'
 						as = 'a'
 						href='tel:639205406696'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' class='h-5 w-5' slot='icon'>
@@ -118,6 +121,7 @@ const alamat = ['C++', 'Console', 'File I/O', 'Data Structures', 'OOP'];
 			</Card>
 		</Section>
 
+		<!-- Education Section -->
 		<Section title='Education'>
 			<Card
 				heading='First Asia Institute of Technology and Humanities'
@@ -134,13 +138,7 @@ const alamat = ['C++', 'Console', 'File I/O', 'Data Structures', 'OOP'];
 			</Card>
 		</Section>
 
-		<Section title='Skills'>
-			<SkillLayout title='Languages' skills={languages} />
-			<SkillLayout title='Frameworks' skills={webTech} />
-			<SkillLayout title='AI & ML' skills={mlTech} />
-			<SkillLayout title='Others' skills={devTools} />
-		</Section>
-
+		<!-- Project Section -->
 		<div>
 			<h2 class="mb-6 text-xl font-semibold">Projects</h2>
 			<div class="flex flex-wrap justify-between gap-2">
@@ -183,6 +181,16 @@ const alamat = ['C++', 'Console', 'File I/O', 'Data Structures', 'OOP'];
 				/>
 				<ProjectCard
 					as="a"
+					href="https://github.com/Alyzbane/Agila"
+					heading="Resident Registry System"
+					subheading=""
+					imagePath="/src/assets/project-agila.png"
+					altText="Resident registry system"
+					skills={citizenRegistry}
+					class="w-full sm:w-[48%]"
+				/>
+				<ProjectCard
+					as="a"
 					href="https://github.com/Alyzbane/Alamat-Inventory"
 					heading="Library Inventory System"
 					subheading=""
@@ -194,6 +202,15 @@ const alamat = ['C++', 'Console', 'File I/O', 'Data Structures', 'OOP'];
 			</div>
 		</div>
 		  
+		<!-- Skills Section -->
+		<Section title='Skills'>
+			<SkillLayout title='Web3' skills={web3} />
+			<SkillLayout title='Languages' skills={languages} />
+			<SkillLayout title='Frameworks' skills={webTech} />
+			<SkillLayout title='AI & ML' skills={mlTech} />
+			<SkillLayout title='Others' skills={devTools} />
+		</Section>
+
 		<Section title='Certifications'>
 			<Card
 				as='a'
