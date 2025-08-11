@@ -14,6 +14,7 @@ const webTech = [ 'Tailwind CSS', 'Bootstrap', 'Flask', 'Django', 'HTMX', 'Gradi
 const mlTech = ['Transformers', 'Scikit-learn', 'PyTorch', 'TensorFlow', 'Pandas', 'NumPy'];
 const devTools = ['Docker', 'Git', 'MySQL', 'PowerBI', 'Qdrant', 'Redis'];
 
+const crypto_web3 = ['grammY', 'Hono', 'Cloudflare Workers', 'Helius API', 'Cloudflare KV'];
 const barkley = ['Python', 'PyTorch', 'Transformers', 'Streamlit', 'Redis'];
 const snapfolia = ['Python', 'PyTorch', 'Transformers'];
 const semanticlip = ['Python', 'Gradio', 'Transformers', 'Qdrant'];
@@ -143,6 +144,15 @@ const alamat = ['C++', 'Console', 'File I/O', 'Data Structures', 'OOP'];
 		<div>
 			<h2 class="mb-6 text-xl font-semibold">Projects</h2>
 			<div class="flex flex-wrap justify-between gap-2">
+				<ProjectCard
+					href="https://t.me/solcrack_bot"
+					heading="Solana Wallet Tracker"
+					subheading=""
+					imagePath="/src/assets/project-solcrack.png"
+					altText="wallet tracker"
+					skills={crypto_web3}
+					class="w-full sm:w-[48%]"
+				/>
 				<ProjectCard
 					href="https://barkley.streamlit.app/"
 					heading="Tree Bark Image Classification"
