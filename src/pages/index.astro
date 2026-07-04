@@ -9,7 +9,8 @@ import SkillLayout from '../components/SkillLayout.astro'
 import { Image } from 'astro:assets'
 import astro from '../assets/profile-picture.png'
 
-const web3 = ['Solana RPC', 'Helius']
+const gameDevSkills = ['Unreal Engine', 'Blueprints', 'C++', 'Animation State Machines', 'Gameplay Systems', 'Character Controllers', 'Combat Design'];
+const softwareDevSkills = ['Python', 'TypeScript', 'C#', 'Docker', 'FastAPI', 'SQL'];
 const languages = ['Python', 'Java', 'C', 'C++', 'C#', 'JavaScript', 'TypeScript'];
 const webTech = ['Hono', 'grammY', 'Tailwind CSS', 'Bootstrap', 'Flask', 'FastAPI', 'Next.js', 'Django', 'Gradio', 'Streamlit'];
 const mlTech = ['Transformers', 'Scikit-learn', 'PyTorch', 'TensorFlow', 'Pandas', 'NumPy'];
@@ -110,7 +111,7 @@ const alamat = ['C++', 'Console', 'File I/O', 'Data Structures', 'OOP'];
 
 		<Section title='About'>
 			<p class='text-muted-foreground'>
-				My focus lies in building practical applications while continuously expanding my knowledge of modern technologies.
+				My focus is on building practical applications and interactive systems, with a growing interest in Unreal Engine gameplay programming, state machines, and game-feel experiments.
 			</p>
 		</Section>
 
@@ -158,8 +159,28 @@ const alamat = ['C++', 'Console', 'File I/O', 'Data Structures', 'OOP'];
 
 		<!-- Project Section -->
 		<div>
-			<h2 class="mb-6 text-xl font-semibold">Projects</h2>
+			<h2 class="mb-6 text-xl font-semibold">Projects & Tech Demos</h2>
 			<div class="flex flex-wrap justify-between gap-2">
+				<ProjectCard
+					as="a"
+					href="https://www.youtube.com/watch?v=GM9mxHKBZeA"
+					heading="Gravity-Reversal Gameplay Prototype"
+					subheading="Surface traversal tech demo"
+					imagePath="https://img.youtube.com/vi/GM9mxHKBZeA/maxresdefault.jpg"
+					altText="Anti-gravity traversal demo thumbnail"
+					skills={gameDevSkills}
+					class="w-full sm:w-[48%]"
+				/>
+				<ProjectCard
+					as="a"
+					href="https://www.youtube.com/watch?v=eDnOvezfTVc"
+					heading="Action Combo System Prototype"
+					subheading="State machine combat flow"
+					imagePath="https://img.youtube.com/vi/eDnOvezfTVc/maxresdefault.jpg"
+					altText="Combo state machine prototype thumbnail"
+					skills={gameDevSkills}
+					class="w-full sm:w-[48%]"
+				/>
 				<ProjectCard
 					href="https://t.me/solcrack_bot"
 					heading="Solana Wallet Tracker"
@@ -222,11 +243,10 @@ const alamat = ['C++', 'Console', 'File I/O', 'Data Structures', 'OOP'];
 		  
 		<!-- Skills Section -->
 		<Section title='Skills'>
-			<SkillLayout title='Web3' skills={web3} />
-			<SkillLayout title='Languages' skills={languages} />
-			<SkillLayout title='Frameworks' skills={webTech} />
+			<SkillLayout title='Game Development' skills={gameDevSkills} />
+			<SkillLayout title='Software Development' skills={softwareDevSkills} />
 			<SkillLayout title='AI & ML' skills={mlTech} />
-			<SkillLayout title='Others' skills={devTools} />
+			<SkillLayout title='Tools' skills={devTools} />
 		</Section>
 
 		<Section title='Certifications'>
